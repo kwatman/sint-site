@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["...", "python311Packages.supervisor", "nodejs_22"]
+nixPkgs = ["...", "python311Packages.supervisor"]
 
 [phases.build]
 cmds = [
@@ -163,7 +163,7 @@ http {
             error_page 404 /index.php;
         ) else ()
 
-        location ~ \.php$ {
+        location ~ \\.php$ {
             fastcgi_pass 127.0.0.1:9000;
             fastcgi_buffer_size 8k;
             fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
@@ -171,7 +171,7 @@ http {
             include $!{nginx}/conf/fastcgi.conf;
         }
 
-        location ~ /\.(?!well-known).* {
+        location ~ /\\.(?!well-known).* {
             deny all;
         }
     }
