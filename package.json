@@ -3,7 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
+        "build": "vite build && vite build --ssr",
         "dev": "vite"
     },
     "devDependencies": {
@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@inertiajs/vue3": "^2.2.15",
-        "@vitejs/plugin-vue": "^6.0.1"
+        "@vitejs/plugin-vue": "^6.0.1",
+        "@vue/server-renderer": "^3.5.22"
     }
 }

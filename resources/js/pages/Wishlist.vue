@@ -17,8 +17,6 @@ const form = ref<{ name: string | null; list: string[] }>({
 const addItem = () => form.value.list.push('');
 const removeItem = (i: number) => form.value.list.splice(i, 1);
 
-// CSRF token from meta tag
-const csrf = (document.querySelector('meta[name="csrf-token"]') as HTMLMetaElement)?.content ?? '';
 
 function submit() {
     const payload = {
@@ -36,7 +34,6 @@ function submit() {
 <template>
     <div class="mx-auto my-10 bg-amber-50  border-amber-200 border rounded-md p-10 max-w-3xl w-full">
         <Form v-if="!submited" @submit.prevent="submit">
-            <input type="hidden" name="_token" :value="csrf"/>
             <Input name="name" v-model="form.name" label="Naam" placeholder="vul je naam hier in"/>
             <div class="border-t mt-5 pt-5 border-primary">
                 <div v-for="i in form.list.length" :key="i" class="mb-4 flex items-center gap-2">
