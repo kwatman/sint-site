@@ -16,6 +16,8 @@ class WishlistForm
             ->components([
                 TextInput::make('name')
                     ->required(),
+                TextInput::make('municipality')
+                    ->required(),
                 Repeater::make('list')
                     ->simple(
                         TextInput::make('item')

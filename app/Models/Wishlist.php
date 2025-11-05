@@ -8,6 +8,7 @@ class Wishlist extends Model
 {
     protected $fillable = [
         'name',
+        'municipality',
         'list',
         'accepted_policy',
     ];
