@@ -15,6 +15,7 @@ class WishlistController extends Controller
             'accepted_policy' => ['accepted'],
             'items' => ['required', 'array'],
             'items.*.name' => ['string', 'max:255'],
+            'comment' => ['nullable', 'string'],
         ]);
 
         $items = collect($data['items'] ?? [])
@@ -34,6 +35,7 @@ class WishlistController extends Controller
             'name' => $data['name'],
             'municipality' => $data['municipality'],
             'list' => $items,
+            'comment' => $data['comment'] ?? null,
             'accepted_policy' => (bool) ($data['accepted_policy'] ?? false),
         ]);
 

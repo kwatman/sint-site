@@ -10,6 +10,7 @@ class Wishlist extends Model
         'name',
         'municipality',
         'list',
+        'comment',
         'accepted_policy',
     ];
 

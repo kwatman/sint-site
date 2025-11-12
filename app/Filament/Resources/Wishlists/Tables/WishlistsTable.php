@@ -26,6 +26,10 @@ class WishlistsTable
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('name')
                     ->searchable(),
+                TextColumn::make('municipality')
+                    ->searchable(),
+                TextColumn::make('comment')
+                    ->limit(50),
                 IconColumn::make('accepted_policy')
                     ->boolean(),
             ])

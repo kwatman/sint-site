@@ -27,7 +27,7 @@
     --color-accent: oklch(0.8127 0.1341 72.98);
     --color-accent-foreground: oklch(0.2488 0.0721 23.98);
 
-    --color-destructive: oklch(0.6368 0.2077 25.31);
+    --color-destructive: #d40000;
     --color-destructive-foreground: oklch(1 0 0);
 
     --color-border: oklch(0.8997 0.0227 87.57);
@@ -35,4 +35,17 @@
     --color-ring: oklch(0.5288 0.1952 27.15);
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-vivaldi: 'Vivaldi', cursive;
+
+    --color-sinthuis-yellow: #fecf05;
+    --color-sinthuis-red: #d40000;
+}
+
+
+@font-face {
+    font-family: Vivaldi;
+    font-style: normal;
+    font-weight: 200 700;
+    font-display: swap;
+    src: url("/fonts/vivaldii.ttf") format("truetype");
 }

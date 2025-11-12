@@ -21,6 +21,8 @@ class WishlistInfolist
                 TextEntry::make('name'),
                 TextEntry::make('list')
                     ->columnSpanFull(),
+                TextEntry::make('comment')
+                    ->columnSpanFull(),
                 IconEntry::make('accepted_policy')
                     ->boolean(),
             ]);

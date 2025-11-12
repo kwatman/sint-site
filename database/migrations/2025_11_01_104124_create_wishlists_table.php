@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('municipality');
+            $table->string('comment')->nullable();
             $table->json('list');
             $table->boolean('accepted_policy');
         });

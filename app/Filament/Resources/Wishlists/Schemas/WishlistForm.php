@@ -26,6 +26,8 @@ class WishlistForm
                     )
                     ->required()
                     ->columnSpanFull(),
+                Textarea::make('comment')
+                    ->columnSpanFull(),
                 Toggle::make('accepted_policy')
                     ->required(),
             ]);
