@@ -57,8 +57,16 @@ function submit() {
             class="flex-1 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.5)_100%),url('/img/background.jpg')] bg-repeat bg-top h-full">
             <div
                 class="mx-auto  bg-amber-50  border-destructive border-5 border-t-0 p-10 pb-5 max-w-3xl w-full bg-opacity-25 shadow-2xl">
+                <p class="mb-5">
+                    Welkom in het Sinthuis van Boutersem!
+                    Sinterklaas en zijn Pieten zijn superblij dat jij hier bent.
+                    Heb jij al een verlanglijstje klaar? Vul je naam in, vertel waar je woont en schrijf al je wensen
+                    op.
+                    Zo weet Sinterklaas precies wat jij graag wilt. Vergeet ook niet of je nog iets extra wil vertellen!
+                    Klik daarna op Verlanglijstje indienen en… wie weet ligt het straks in de grote boek van Sinterklaas
+                </p>
                 <Form v-if="!submited" @submit.prevent="submit">
-                    <Input name="name" v-model="form.name" label="Naam" placeholder="vul je naam hier in"/>
+                    <Input  name="name" v-model="form.name" label="Naam" placeholder="vul je naam hier in"/>
                     <p v-if="errors.name" class="text-destructive text-sm mt-1">{{ errors.name }}</p>
 
                     <Input name="municipality" v-model="form.municipality" label="Gemeente"
@@ -67,7 +75,7 @@ function submit() {
 
                     <div class="border-t mt-5 pt-5 border-primary">
                         <div class="flex items-center justify-between mb-2">
-                            <p class="text-foreground text-lg font-semibold">Wensen</p>
+                            <p class="text-foreground text-lg font-semibold">Wat wens je graag in je schoen?</p>
                         </div>
                         <p v-if="errors.items" class="text-destructive text-sm mb-2">{{ errors.items }}</p>
 
@@ -76,7 +84,7 @@ function submit() {
                                 <p class="text-foreground text-lg font-semibold w-4 min-w-4">{{ i }}.</p>
                                 <Input v-model="form.list[i-1]" :name="`items[${i-1}][name]`"
                                        placeholder="vul je wens hier in"/>
-                                <div v-if="form.list.length > 1" @click="removeItem(i-1)"
+                                <div v-show="form.list.length > 1" @click="removeItem(i-1)"
                                      class="cursor-pointer hover:bg-destructive/10 hover:text-destructive p-2 rounded-md">
                                     <Icon class="text-2xl text-foreground "
                                           icon="material-symbols-light:delete-outline" size="2xl"/>
@@ -88,11 +96,11 @@ function submit() {
                         </div>
                         <button type="button" @click="addItem"
                                 class="bg-accent text-white px-4 py-2 rounded cursor-pointer">
-                            Voeg item toe
+                            Voeg wens toe
                         </button>
                     </div>
 
-                    <text-area name="comment" v-model="form.comment" label="Extra opmerkingen"
+                    <text-area name="comment" v-model="form.comment" label="Wat moeten de sint en pieten zeker weten?"
                                placeholder="Heb je nog extra opmerkingen? Vul ze hier in." class="mt-6"/>
 
                     <div class="mt-6 flex items-center gap-2">

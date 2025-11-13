@@ -11,7 +11,7 @@ const model = defineModel<string>();
 
 
 <template>
-    <div class="w-full">
+    <div class="w-full my-2">
         <label v-if="label" class="mr-4 font-semibold text-foreground text-lg" :for="name">{{ label }}</label>
         <input
             class="
